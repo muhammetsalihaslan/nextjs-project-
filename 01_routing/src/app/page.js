@@ -1,23 +1,6 @@
 import Link from "next/link";
+import HomeContainer from "../containers/home";
 
 export default function Home() {
-  return (
-    <div>
-      <Link href="/hakkimizda">Hakkimizda</Link>
-      <br />
-      <Link href="/docs/post-1">Post-1</Link>
-      <br />
-      <Link
-        href={{
-          pathname: "/hakkimizda",
-          query: {
-            name: "Next.js",
-            surname: "ff",
-          },
-        }}
-      >
-        Hakkimizda obje ile
-      </Link>
-    </div>
-  );
+  return <HomeContainer />;
 }
