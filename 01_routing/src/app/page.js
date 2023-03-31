@@ -1,6 +1,6 @@
-import Link from "next/link";
+import React from "react";
 import HomeContainer from "../containers/home";
 
-export default function Home() {
+export default function HomePage() {
   return <HomeContainer />;
 }
