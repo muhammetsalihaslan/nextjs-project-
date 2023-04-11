@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      Made with ❤️ by&nbsp;
+      Made by;
       <Link href="https://github.com/">Salih</Link>
     </footer>
   );

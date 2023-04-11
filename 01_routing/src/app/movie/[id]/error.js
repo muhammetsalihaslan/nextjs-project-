@@ -1,4 +1,4 @@
-"use client";
+"use client"; //server componenti client componentine çevirmek için kullanılır
 import React from "react";
 import Link from "next/link";
 
