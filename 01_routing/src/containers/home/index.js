@@ -11,12 +11,16 @@ const HomeContainer = ({ selectedCategory }) => {
       <FeaturedMovie movie={Movies.results[0]} />
       <Categories categories={Genres.genres.slice(0, 5)} />
       {selectedCategory.movies.length > 0 && (
-        <MoviesSection title="Popular Films" movies={selectedCategory.movies} />
+        <MoviesSection
+          title={
+            Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id)
+              .name
+          }
+          movies={selectedCategory.movies}
+        />
       )}
       <MoviesSection
-        title={Genres.genres.find(
-          (genre) => `${genre.id}` === selectedCategory.id
-        )}
+        title="Popular Films"
         movies={Movies.results.slice(1, 7)}
       />
       <MoviesSection title="Your Films" movies={Movies.results.slice(7, 13)} />
