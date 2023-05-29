@@ -1,35 +1,21 @@
 import React from "react";
 import HomeContainer from "../../containers/home";
-import Movies from "../../mocks/movies.json";
-
-const API_URL = "https://api.themoviedb.org/3";
+import { fetchMovieApi } from "../../services/movie";
 
 const getSingleCategory = async (genreId) => {
-  const rest = await fetch(
-    `${API_URL}/discover/movie?api_key=${process.env.API_KEY}&with_genres=${genreId}`
-  );
-  return rest.json();
+  return fetchMovieApi("/discover/movie", `with_genres=${genreId}`);
 };
 
 const getCategories = async () => {
-  const rest = await fetch(
-    `${API_URL}/genre/movie/list?api_key=${process.env.API_KEY}&page=1`
-  );
-  return rest.json();
+  return fetchMovieApi("/genre/movie/list", `&page=1`);
 };
 
 const getPopularMovies = async () => {
-  const rest = await fetch(
-    `${API_URL}/movie/popular?api_key=${process.env.API_KEY}&page=1`
-  );
-  return rest.json();
+  return fetchMovieApi("/movie/popular", `&page=1`);
 };
 
 const getTopRatedMovies = async () => {
-  const rest = await fetch(
-    `${API_URL}/movie/top_rated?api_key=${process.env.API_KEY}&page=1`
-  );
-  return rest.json();
+  return fetchMovieApi("/movie/top_rated", `&page=1`);
 };
 
 async function HomePage({ params }) {
